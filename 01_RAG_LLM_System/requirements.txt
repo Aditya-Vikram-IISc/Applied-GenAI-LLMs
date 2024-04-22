@@ -1,0 +1,10 @@
+fastapi==0.110.2
+ipykernel==6.29.4
+ipython==8.23.0
+joblib==1.4.0
+openai==1.23.2
+pinecone-client==3.2.2
+pydantic==2.7.0
+python-dotenv==1.0.1
+tqdm==4.66.2
+uvicorn==0.29.0
