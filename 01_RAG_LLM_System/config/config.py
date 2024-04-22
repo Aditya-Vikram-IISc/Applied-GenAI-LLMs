@@ -5,12 +5,13 @@ from dotenv import load_dotenv
 from configparser import ConfigParser
 
 
-# load the .env file
-load_dotenv()
-
 # get the base path
 BASE_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONFIG_PATH = os.path.join(BASE_PATH, "config")
+
+# load the .env file
+load_dotenv(os.path.join(CONFIG_PATH, '.env'),verbose=True)
+
 
 # read the config using configparser
 config = ConfigParser()
@@ -30,10 +31,14 @@ LLM_MODEL_PARAMS = {
                     "stop": str(config["LLM_SYSTEM"]["stop"])
                     }
 
-# Get the APIs
-PINECONE_API_CREDS = str(os.getenv("PINECONE_API_CREDS"))
-OPENAI_API_CREDS = os.getenv("OPENAI_API_CREDS")
+# Get the API creds
+CREDS = {
+        "PINECONE_API_CREDS" : str(os.getenv("PINECONE_API_CREDS")),
+        "OPENAI_API_CREDS"  : str(os.getenv("OPENAI_API_CREDS"))
+        }
+
 
 if __name__ == "__main__":
     print("RAG DB Index name", RAG_INDEX)
     print("LLM_MODEL_PARAMS", LLM_MODEL_PARAMS)
+    print(CREDS)
