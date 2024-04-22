@@ -29,9 +29,6 @@ class Pinecone_Index:
 
 
 
-
-
-
 if __name__ == "__main__":
     pc_index = Pinecone_Index()
     pc_index.create_index(indexname = "llmrag")
