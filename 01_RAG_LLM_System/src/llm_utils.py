@@ -12,7 +12,7 @@ class OpenAI_MasterClass:
         self.llm_model = llm_model
         self.client = OpenAI(api_key= key)
 
-    def create_embeddings(self, text:list[str]):
+    def create_embeddings(self, text:str):
         result = self.client.embeddings.create(
                             input=text,
                             model= self.embedding_model
