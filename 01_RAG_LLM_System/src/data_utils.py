@@ -33,6 +33,18 @@ def create_data_for_uploading_to_PineconeDB(data: list[str]):
     return vectors
 
 
+
+def postprocess_retrieval_data(retrieved_data, threshold: float = 0.8):
+    response = ""
+    for x in retrieved_data["matches"]:
+        if x["score"] <= 0.8:
+            continue
+        response += x["metadata"]["text"]
+    
+    return response
+
+
+
 if __name__ == "__main__":
     # read the data pickle
     data = joblib.load("text_data.pkl")

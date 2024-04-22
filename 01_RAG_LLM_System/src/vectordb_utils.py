@@ -24,7 +24,13 @@ class Pinecone_Index:
         index.upsert(vectors = vectors)
         print("Vectors upserted succesfully !")
 
-
+    
+    def retrieve_data_from_vectorDB(self, vector, index_name:str, top_k:int=2, include_metadata:bool = True):
+        res = self.pc.Index(index_name).query(vector =  vector,
+                                              top_k =top_k, 
+                                              include_metadata = include_metadata)
+        
+        return res
 
 
 

@@ -22,7 +22,7 @@ RAG_INDEX = config["RAG_SYSTEM"]["index_name"]
 
 # Get the info of LLM model
 LLM_MODEL_PARAMS = {
-                    "model_name" : config["LLM_SYSTEM"]["model_name"],
+                    "model_name" : str(config["LLM_SYSTEM"]["model_name"]),
                     "temperature": float(config["LLM_SYSTEM"]["temperature"]),
                     "max_tokens": int(config["LLM_SYSTEM"]["max_tokens"]),
                     "top_p": float(config["LLM_SYSTEM"]["top_p"]),
