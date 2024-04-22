@@ -28,7 +28,8 @@ LLM_MODEL_PARAMS = {
                     "top_p": float(config["LLM_SYSTEM"]["top_p"]),
                     "frequency_penalty": float(config["LLM_SYSTEM"]["frequency_penalty"]),
                     "presence_penalty": float(config["LLM_SYSTEM"]["presence_penalty"]),
-                    "stop": str(config["LLM_SYSTEM"]["stop"])
+                    "stop": str(config["LLM_SYSTEM"]["stop"]),
+                    "embeddings": str(config["LLM_SYSTEM"]["embeddings"])
                     }
 
 # Get the API creds

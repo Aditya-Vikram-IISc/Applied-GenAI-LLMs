@@ -3,7 +3,7 @@ from openai import OpenAI
 
 
 class OpenAI_MasterClass:
-    def __init__(self, embedding_model:str= "text-embedding-ada-002",
+    def __init__(self, embedding_model:str= LLM_MODEL_PARAMS["embeddings"],
                  llm_model:str = "chatgpt",
                 key = CREDS["OPENAI_API_CREDS"],
                 ):
